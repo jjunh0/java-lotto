@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import static domain.LottoConstants.LOTTO_PRICE;
 import static validation.LottoValidator.*;
 
 public class InputView {
@@ -14,7 +15,7 @@ public class InputView {
         Scanner sc = new Scanner(System.in);
         System.out.println("구입금액을 입력해 주세요.");
         int purchaseAmount = validatePurchaseAmount(sc.nextLine());
-        System.out.println(purchaseAmount / LottoFactory.LOTTO_PRICE + "개를 구매했습니다.");
+        System.out.println(purchaseAmount / LOTTO_PRICE + "개를 구매했습니다.");
         return purchaseAmount;
     }
 
@@ -51,11 +52,11 @@ public class InputView {
         Scanner sc = new Scanner(System.in);
         try {
             int amount = Integer.parseInt(purchaseAmount);
-            if (amount < LottoFactory.LOTTO_PRICE) {
-                throw new IllegalArgumentException(String.format("구입 금액은 %d원 이상부터 가능합니다.", LottoFactory.LOTTO_PRICE));
+            if (amount < LOTTO_PRICE) {
+                throw new IllegalArgumentException(String.format("구입 금액은 %d원 이상부터 가능합니다.", LOTTO_PRICE));
             }
-            if (amount % LottoFactory.LOTTO_PRICE != 0) {
-                throw new IllegalArgumentException(String.format("구입 금액은 %d원 단위로 가능합니다.", LottoFactory.LOTTO_PRICE));
+            if (amount % LOTTO_PRICE != 0) {
+                throw new IllegalArgumentException(String.format("구입 금액은 %d원 단위로 가능합니다.", LOTTO_PRICE));
             }
             return amount;
         } catch (NumberFormatException e) {
