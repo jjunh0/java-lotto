@@ -9,9 +9,9 @@ public class LottoStats {
     private final Map<Rank, Integer> rank;
     private final WinningLotto winningLotto;
 
-    public LottoStats(WinningLotto winnigLotto) {
+    public LottoStats(WinningLotto winningLotto) {
         rank = new HashMap<>();
-        this.winningLotto = winnigLotto;
+        this.winningLotto = winningLotto;
     }
 
     public void calculateResult(List<Lotto> lottos) {
@@ -30,10 +30,6 @@ public class LottoStats {
     }
 
     public int getStatus(Rank lottoRank) {
-        return getRankCount(lottoRank);
-    }
-
-    private Integer getRankCount(Rank lottoRank) {
         return rank.getOrDefault(lottoRank, 0);
     }
 
