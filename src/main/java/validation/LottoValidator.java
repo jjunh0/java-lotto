@@ -17,7 +17,7 @@ public class LottoValidator {
     }
 
     public static void validateNumber(int number) {
-        if (number < MIN_LOTTO_NUMBER || number > MAX_LOTTO_NUMNER) {
+        if (number < MIN_LOTTO_NUMBER || number > MAX_LOTTO_NUMBER) {
             throw new IllegalArgumentException("번호는 1 ~ 45만 입력 가능합니다.");
         }
     }
