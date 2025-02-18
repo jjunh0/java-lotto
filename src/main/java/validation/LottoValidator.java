@@ -2,9 +2,12 @@ package validation;
 
 import java.util.List;
 
+import static domain.LottoConstants.*;
+
+
 public class LottoValidator {
     public static void validateWinningNumbers(List<Integer> winningNumbers) {
-        if (winningNumbers.size() != 6) {
+        if (winningNumbers.size() != LOTTO_NUMBER_COUNT) {
             throw new IllegalArgumentException("당첨 번호는 6개여야 합니다.");
         }
         for (int num : winningNumbers) {
@@ -14,7 +17,7 @@ public class LottoValidator {
     }
 
     public static void validateNumber(int number) {
-        if (number < 1 || number > 45) {
+        if (number < MIN_LOTTO_NUMBER || number > MAX_LOTTO_NUMNER) {
             throw new IllegalArgumentException("번호는 1 ~ 45만 입력 가능합니다.");
         }
     }
