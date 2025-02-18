@@ -12,10 +12,9 @@ public class Lotto {
         this.numbers = numbers;
     }
 
-    public String toString() {
-        return numbers.toString();
+    public LottoDto getLottoDto() {
+        return new LottoDto(numbers);
     }
-
     public Rank getRank(WinningLotto winningLotto) {
         int matchCount = (int) numbers.stream()
                 .filter(winningLotto::containsNumber)
