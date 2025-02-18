@@ -11,7 +11,7 @@ import java.util.List;
 public class OutputView {
     public static void printLottos(List<Lotto> lottos) {
         for (Lotto lotto : lottos) {
-            System.out.println(lotto);
+            System.out.println(lotto.getLottoDto());
         }
     }
 
@@ -34,7 +34,7 @@ public class OutputView {
         return String.format("%d개 일치 (%d원) - %d개", rank.getCount(), rank.getPrize(), lottoStats.getStatus(rank));
     }
 
-    public static void printEarningRate(LottoStats lottoStats, int purchaseAmount) {
+    public static void getEarningRateMessage(LottoStats lottoStats, int purchaseAmount) {
         System.out.printf("총 수익률은 %s입니다.", lottoStats.getEarningRate(purchaseAmount));
     }
 }

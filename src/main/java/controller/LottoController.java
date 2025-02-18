@@ -19,7 +19,7 @@ public class LottoController {
         LottoStats lottoStats = new LottoStats(winningLotto);
         lottoStats.calculateResult(lottos);
         OutputView.printLottoStats(lottoStats);
-        OutputView.printEarningRate(lottoStats, purchaseAmount);
+        OutputView.getEarningRateMessage(lottoStats, purchaseAmount);
     }
 
     public static int getPurchaseAmount() {
