@@ -2,7 +2,8 @@ package domain;
 
 import java.util.List;
 
-import static validation.LottoValidator.*;
+import static validation.LottoValidator.validateBonusBallUnique;
+import static validation.LottoValidator.validateWinningNumbers;
 
 public class WinningLotto {
     private final List<Integer> winningNumbers;

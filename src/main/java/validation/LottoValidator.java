@@ -2,7 +2,9 @@ package validation;
 
 import java.util.List;
 
-import static domain.LottoConstants.*;
+import static domain.LottoConstants.LOTTO_NUMBER_COUNT;
+import static domain.LottoConstants.MAX_LOTTO_NUMBER;
+import static domain.LottoConstants.MIN_LOTTO_NUMBER;
 
 
 public class LottoValidator {

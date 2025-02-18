@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static domain.LottoConstants.*;
+import static domain.LottoConstants.LOTTO_NUMBER_COUNT;
+import static domain.LottoConstants.LOTTO_PRICE;
 
 public class LottoFactory {
     private static final List<Integer> randomNumbers = new ArrayList<>(
@@ -14,7 +15,6 @@ public class LottoFactory {
                     .boxed()
                     .toList()
     );
-
 
 
     private static Lotto makeLotto() {

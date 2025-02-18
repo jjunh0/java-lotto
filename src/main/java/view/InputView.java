@@ -1,13 +1,13 @@
 package view;
 
-import domain.LottoFactory;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 import static domain.LottoConstants.LOTTO_PRICE;
-import static validation.LottoValidator.*;
+import static validation.LottoValidator.validateBonusBallUnique;
+import static validation.LottoValidator.validateNumber;
+import static validation.LottoValidator.validateWinningNumbers;
 
 public class InputView {
 

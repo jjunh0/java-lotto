@@ -1,5 +1,6 @@
 package domain;
 
+import dto.LottoDto;
 import validation.LottoValidator;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class Lotto {
     public LottoDto getLottoDto() {
         return new LottoDto(numbers);
     }
+
     public Rank getRank(WinningLotto winningLotto) {
         int matchCount = (int) numbers.stream()
                 .filter(winningLotto::containsNumber)

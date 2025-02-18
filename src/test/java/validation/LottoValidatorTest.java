@@ -6,7 +6,9 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static validation.LottoValidator.*;
+import static validation.LottoValidator.validateBonusBallUnique;
+import static validation.LottoValidator.validateNumber;
+import static validation.LottoValidator.validateWinningNumbers;
 
 class LottoValidatorTest {
     @DisplayName("당첨 번호 6개 예외 처리 테스트")
