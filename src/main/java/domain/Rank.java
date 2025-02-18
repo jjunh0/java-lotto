@@ -28,13 +28,13 @@ public enum Rank {
                         .reversed())
                 .toList();
         return ranks.stream()
-                .filter(rank -> matchesRank(matchCount, contains, rank))
+                .filter(rank -> rank.matchesRank(matchCount, contains))
                 .findFirst()
                 .orElse(NONE);
     }
 
-    private static boolean matchesRank(int matchCount, boolean contains, Rank rank) {
-        return rank.hasCountMatch(matchCount) && (rank.hasNoBonusMatch() || contains);
+    private boolean matchesRank(int matchCount, boolean contains) {
+        return this.hasCountMatch(matchCount) && (this.hasNoBonusMatch() || contains);
     }
 
     public Long getPrize() {
