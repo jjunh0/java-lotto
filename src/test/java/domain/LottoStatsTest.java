@@ -51,9 +51,9 @@ class LottoStatsTest {
         assertThat(lottoStats.getEarningRate(14000)).isEqualTo(0.35);
     }
 
-    @DisplayName("총 상금 계산 테스트")
+    @DisplayName("수익률 계산 테스트")
     @Test
-    void 총_상금_계산_테스트() {
+    void 수익률_계산_테스트() {
         LottoStats lottoStats = new LottoStats(new WinningLotto(List.of(1, 2, 3, 4, 5, 6), 7));
 
         Lotto firstRank = new Lotto(List.of(1, 2, 3, 4, 5, 6));
@@ -64,7 +64,6 @@ class LottoStatsTest {
         List<Lotto> lottos = List.of(firstRank, secondRank, thirdRank, fourthRank, fifthRank);
 
         lottoStats.calculateResult(lottos);
-
-        assertThat(lottoStats.getTotalPrize()).isEqualTo(2031555000L);
+        assertThat(lottoStats.getEarningRate(5000)).isEqualTo(406311.0);
     }
 }

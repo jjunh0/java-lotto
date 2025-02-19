@@ -22,7 +22,7 @@ public class LottoController {
         OutputView.getEarningRateMessage(lottoStats, purchaseAmount);
     }
 
-    public static int getPurchaseAmount() {
+    private static int getPurchaseAmount() {
         while (true) {
             try {
                 return InputView.inputPurchaseAmount();
@@ -32,7 +32,7 @@ public class LottoController {
         }
     }
 
-    public static List<Integer> getWinningNumbers() {
+    private static List<Integer> getWinningNumbers() {
         while (true) {
             try {
                 return InputView.inputWinningNumbers();
@@ -42,7 +42,7 @@ public class LottoController {
         }
     }
 
-    public static int getBonusBall(List<Integer> winningNumbers) {
+    private static int getBonusBall(List<Integer> winningNumbers) {
         while (true) {
             try {
                 return InputView.inputBonusBall(winningNumbers);
