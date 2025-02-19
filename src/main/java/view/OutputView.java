@@ -16,7 +16,6 @@ public class OutputView {
         }
     }
 
-
     public static void printLottoStats(LottoStats lottoStats) {
         System.out.println("당첨 통계");
         System.out.println("---------");
