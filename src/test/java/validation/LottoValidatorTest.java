@@ -15,11 +15,11 @@ class LottoValidatorTest {
     @Test
     void 당첨_번호_6개_예외_처리_테스트() {
         List<Integer> underSixNumbers = List.of(1, 2, 3, 4, 5);
-        List<Integer> sixNumbers = List.of(1, 2, 3, 4, 5, 6);
         List<Integer> overSixNumbers = List.of(1, 2, 3, 4, 5, 6, 7);
         assertThatThrownBy(() -> {
             validateWinningNumbers(underSixNumbers);
-            validateWinningNumbers(sixNumbers);
+        }).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> {
             validateWinningNumbers(overSixNumbers);
         }).isInstanceOf(IllegalArgumentException.class);
     }
@@ -29,8 +29,14 @@ class LottoValidatorTest {
     void 당첨_번호는_1에서_45_사이의_수_예외_처리_테스트() {
         assertThatThrownBy(() -> {
             validateNumber(0);
+        }).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> {
             validateNumber(5);
+        }).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> {
             validateNumber(40);
+        }).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> {
             validateNumber(50);
         }).isInstanceOf(IllegalArgumentException.class);
     }
